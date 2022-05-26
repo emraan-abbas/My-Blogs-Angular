@@ -1,0 +1,17 @@
+.main{
+  width: 100vw;
+  min-height: 100vh;
+  max-height: fit-content;
+}
+
+
+.user-form{
+  // border: 2px black solid;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+}
