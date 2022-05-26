@@ -1,0 +1,39 @@
+<div class="main">
+
+  <div class="login-form">
+    <h1>Login Here</h1>
+
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+      <p>
+        <mat-form-field>
+          <mat-label>Email</mat-label>
+          <input type="email" matInput formControlName="email" placeholder="Enter Your Email">
+          <br />
+          <span style="color: red;" *ngIf="emailValidator && emailValidator.invalid && emailValidator.touched">
+            Invalid Email !
+          </span>
+          <br />
+        </mat-form-field>
+      </p>
+
+
+      <p>
+        <mat-form-field>
+          <mat-label>Password</mat-label>
+          <input type="password" matInput formControlName="password" placeholder="Enter You Password">
+          <br />
+          <span style="color: red;" *ngIf="passwordValidator && passwordValidator.invalid && passwordValidator.touched">
+            Invalid Password !
+          </span>
+          <br />
+        </mat-form-field>
+      </p>
+
+
+
+      <button [disabled]="loginForm.invalid">Login !</button>
+    </form>
+
+  </div>
+
+</div>

@@ -1,0 +1,51 @@
+<div class="main">
+
+  <div class="user-form">
+    <h1>Create User Form</h1>
+
+    <form [formGroup]="createUserForm" (ngSubmit)="createUser()">
+      <input type="text" formControlName="name" placeholder="Enter User's Name">
+      <br />
+      <span style="color: red;" *ngIf="nameValidator && nameValidator.invalid && nameValidator.touched">
+        User Name Required !
+      </span>
+      <br />
+
+
+      <input type="email" formControlName="email" placeholder="Enter User's Email">
+      <br />
+      <span style="color: red;" *ngIf="emailValidator && emailValidator.invalid && emailValidator.touched">
+        Enter Valid Email !
+      </span>
+      <br />
+
+      <input type="password" formControlName="password" placeholder="Enter User's Password">
+      <br />
+      <span style="color: red;" *ngIf="passwordValidator && passwordValidator.invalid && passwordValidator.touched">
+        Enter Valid Password !
+      </span>
+      <br />
+
+      <input type="text" formControlName="role" placeholder="Enter User's Role">
+      <br />
+      <span style="color: red;" *ngIf="nameValidator && nameValidator.invalid && nameValidator.touched">
+        User Role Required !
+      </span>
+      <br />
+
+
+      <input type="text" formControlName="status" placeholder="Enter User's Status">
+      <br />
+      <span style="color: red;" *ngIf="nameValidator && nameValidator.invalid && nameValidator.touched">
+        User Status Required !
+      </span>
+      <br />
+
+
+      <button [disabled]="createUserForm.invalid">Create !</button>
+    </form>
+
+
+  </div>
+
+</div>
