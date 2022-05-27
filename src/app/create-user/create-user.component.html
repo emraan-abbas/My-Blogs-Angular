@@ -4,45 +4,73 @@
     <h1>Create User Form</h1>
 
     <form [formGroup]="createUserForm" (ngSubmit)="createUser()">
-      <input type="text" formControlName="name" placeholder="Enter User's Name">
-      <br />
-      <span style="color: red;" *ngIf="nameValidator && nameValidator.invalid && nameValidator.touched">
-        User Name Required !
-      </span>
-      <br />
+      <p>
+        <mat-form-field>
+          <mat-label>Name</mat-label>
+          <input type="text" matInput formControlName="name" placeholder="Enter User's Name">
+          <br />
+          <mat-error style="color: red;" *ngIf="nameValidator && nameValidator.invalid && nameValidator.touched">
+            User Name Required !
+          </mat-error>
+          <br />
+        </mat-form-field>
+      </p>
 
 
-      <input type="email" formControlName="email" placeholder="Enter User's Email">
-      <br />
-      <span style="color: red;" *ngIf="emailValidator && emailValidator.invalid && emailValidator.touched">
-        Enter Valid Email !
-      </span>
-      <br />
-
-      <input type="password" formControlName="password" placeholder="Enter User's Password">
-      <br />
-      <span style="color: red;" *ngIf="passwordValidator && passwordValidator.invalid && passwordValidator.touched">
-        Enter Valid Password !
-      </span>
-      <br />
-
-      <input type="text" formControlName="role" placeholder="Enter User's Role">
-      <br />
-      <span style="color: red;" *ngIf="nameValidator && nameValidator.invalid && nameValidator.touched">
-        User Role Required !
-      </span>
-      <br />
+      <p>
+        <mat-form-field>
+          <mat-label>Email</mat-label>
+          <input type="email" matInput formControlName="email" placeholder="Enter User's Email">
+          <br />
+          <mat-error style="color: red;" *ngIf="emailValidator && emailValidator.invalid && emailValidator.touched">
+            Enter Valid Email !
+          </mat-error>
+          <br />
+        </mat-form-field>
+      </p>
 
 
-      <input type="text" formControlName="status" placeholder="Enter User's Status">
-      <br />
-      <span style="color: red;" *ngIf="nameValidator && nameValidator.invalid && nameValidator.touched">
-        User Status Required !
-      </span>
-      <br />
+      <p>
+        <mat-form-field>
+          <mat-label>Password</mat-label>
+          <input type="password" matInput formControlName="password" placeholder="Enter User's Password">
+          <br />
+          <mat-error style="color: red;"
+            *ngIf="passwordValidator && passwordValidator.invalid && passwordValidator.touched">
+            Enter Valid Password !
+          </mat-error>
+          <br />
+        </mat-form-field>
+      </p>
 
 
-      <button [disabled]="createUserForm.invalid">Create !</button>
+      <p>
+        <mat-form-field>
+          <mat-label>User's Role</mat-label>
+          <input type="text" matInput formControlName="role" placeholder="Enter User's Role">
+          <br />
+          <mat-error style="color: red;" *ngIf="nameValidator && nameValidator.invalid && nameValidator.touched">
+            User Role Required !
+          </mat-error>
+          <br />
+        </mat-form-field>
+      </p>
+
+
+      <p>
+        <mat-form-field>
+          <mat-label>User's Status</mat-label>
+          <input type="text" matInput formControlName="status" placeholder="Enter User's Status">
+          <br />
+          <mat-error style="color: red;" *ngIf="nameValidator && nameValidator.invalid && nameValidator.touched">
+            User Status Required !
+          </mat-error>
+          <br />
+        </mat-form-field>
+      </p>
+
+
+      <button mat-raised-button color="primary" [disabled]=" createUserForm.invalid">Create !</button>
     </form>
 
 
