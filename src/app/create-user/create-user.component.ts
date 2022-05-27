@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
+import {UserService} from '../Services/user.service';
+
 @Component({
   selector: 'app-create-user',
   templateUrl: './create-user.component.html',
@@ -9,10 +11,11 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class CreateUserComponent implements OnInit {
 
-  constructor() { }
+  constructor(private createUserService: UserService) { }
 
   ngOnInit(): void {
   }
+  
 
   createUserForm = new FormGroup({
     name: new FormControl('', [Validators.required]),
@@ -23,7 +26,12 @@ export class CreateUserComponent implements OnInit {
   })
 
   createUser() {
-    console.log(this.createUserForm.value)
+    // console.log(this.createUserForm.value)
+    this.createUserService.transportUserData(this.createUserForm.value).subscribe(
+      (res: any) => {
+        console.log(res)
+      }
+    )
   };
 
   get nameValidator() {                       // Function to apply Validations
