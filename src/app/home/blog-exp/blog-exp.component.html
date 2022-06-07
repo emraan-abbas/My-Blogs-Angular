@@ -1,0 +1,32 @@
+<div class="main-container">
+
+  <div class="blog-conatiner">
+    <h2 mat-dialog-title>{{blog?.title }}</h2>
+    <mat-dialog-content class="mat-typography">
+      <mat-card-subtitle>{{blog.user ? blog.user.name : 'Anonymous User'}}</mat-card-subtitle>
+      <p>
+        {{blog?.description}}
+      </p>
+    </mat-dialog-content>
+
+    <div class="btn-container">
+      <mat-dialog-actions align="end">
+        <button class="btn" color="accent" mat-raised-button mat-dialog-close (click)="closeTab()">
+          Close
+        </button>
+
+        <button class="btn" color="primary" mat-raised-button mat-dialog-close (click)="editBlog()">
+          Edit
+        </button>
+
+        <button class="btn" color="warn" mat-raised-button mat-dialog-close (click)="deleteBlog()">
+          Delete
+        </button>
+      </mat-dialog-actions>
+
+    </div>
+
+
+  </div>
+
+</div>
