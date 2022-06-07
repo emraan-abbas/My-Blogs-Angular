@@ -26,7 +26,7 @@ export class CreateUserComponent implements OnInit {
   })
 
   createUser() {
-    // console.log(this.createUserForm.value)
+
     this.createUserService.transportUserData(this.createUserForm.value).subscribe(
       (res: any) => {
         console.log(res)
