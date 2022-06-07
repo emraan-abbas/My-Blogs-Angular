@@ -1,0 +1,26 @@
+<div class="main-container">
+
+  <div class="form-container">
+    <form class="example-form" [formGroup]="createBlog" (ngSubmit)="submitBlog()">
+      <table class="example-full-width" cellspacing="0">
+        <tr>
+          <td>
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Blog Name</mat-label>
+              <input matInput formControlName="title">
+            </mat-form-field>
+          </td>
+      </table>
+
+      <p>
+        <mat-form-field id="example-full-width" appearance="fill">
+          <mat-label>Write . . .</mat-label>
+          <textarea matInput placeholder="Ex. I want to quit." formControlName="description"></textarea>
+        </mat-form-field>
+      </p>
+
+      <button mat-raised-button color="primary">Submit</button>
+    </form>
+  </div>
+
+</div>
