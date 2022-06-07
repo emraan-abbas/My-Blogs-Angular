@@ -1,0 +1,36 @@
+
+
+.main-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sub-container{
+  height: 80%;
+  width: 80%;
+
+}
+
+.table-btn{
+  display: flex;
+  justify-content: center;
+
+}
+
+table {
+  // border: 2px black solid;
+  width: 80%;
+}
+
+th {
+  border: 2px black solid;
+}
+
+td {
+  border: 2px black solid;
+}
+
+
+

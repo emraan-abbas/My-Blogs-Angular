@@ -9,15 +9,12 @@ import { UserService } from '../Services/user.service'
 })
 export class AllUsersComponent implements OnInit {
 
+  allUsers:any;
+  counter:any = 1;
   constructor(private getAllUsers: UserService) { }
 
   ngOnInit(): void {
-  }
-
-  allUsers:any;
-
-  getAll() {
-    this.getAllUsers.getAllUserData().subscribe(
+        this.getAllUsers.getAllUserData().subscribe(
       (res: any) =>{
         console.log('=============')
         console.log(res.allUsers)
@@ -25,5 +22,16 @@ export class AllUsersComponent implements OnInit {
       }
     )
   }
+
+
+  // getAll() {
+  //   this.getAllUsers.getAllUserData().subscribe(
+  //     (res: any) =>{
+  //       console.log('=============')
+  //       console.log(res.allUsers)
+  //       this.allUsers = res.allUsers;
+  //     }
+  //   )
+  // }
 
 }
